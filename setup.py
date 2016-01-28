@@ -29,10 +29,10 @@ version = open("version.txt").read().rstrip()
 # parameters that define our package.
 setup(
 
-    name='bob.db.atvskeystroke',
+    name='bob.db.KBOC16',
     version=version,
     description='KBOC16 Database Access API for Bob',
-    url='http://github.com/bioidiap/bob.db.KBOC16',
+    url='http://github.com/mgbarrero/bob.db.KBOC16',
     license='GPLv3',
     author='Marta Gomez-Barrero',
     author_email='marta.barrero@uam.es',

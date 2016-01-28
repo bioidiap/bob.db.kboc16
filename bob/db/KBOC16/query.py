@@ -107,14 +107,14 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     """
 
     groups = self.__group_replace_eval_by_genuine__(groups)
-    groups = self.check_parameters_for_validity(groups, "group", ('Genuine',))
+    #groups = self.check_parameters_for_validity(groups, "group", ('Genuine',))
 
     # List of the clients
     q = self.query(Client)
-    if groups:
+    """if groups:
       q = q.filter(Client.stype.in_(groups))
     else:
-      q = q.filter(Client.stype.in_(['Genuine']))
+      q = q.filter(Client.stype.in_(['Genuine']))"""
     q = q.order_by(Client.id)
     return list(q)
 
@@ -200,7 +200,6 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     if ('eval' in groups):
       if('enrol' in purposes):
         q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
-              filter(Client.stype.in_(['Genuine'])).\
               filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'enrol'))
         if model_ids:
           q = q.filter(Client.subid.in_(model_ids))
@@ -210,7 +209,6 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
       if('probe' in purposes):
         if('client' in classes):
           q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
-                filter(Client.stype.in_(['Genuine'])).\
                 filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'probe'))
           if model_ids:
             q = q.filter(Client.subid.in_(model_ids))
@@ -219,7 +217,6 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
 
         if('impostor' in classes):
           q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
-                filter(Client.stype.in_(['Impostor'])).\
                 filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'probe'))
           if model_ids:
             q = q.filter(Client.subid.in_(model_ids))

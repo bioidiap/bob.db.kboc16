@@ -21,7 +21,7 @@ import os,string
 from .models import *
 
 # clients
-userid_clients = range(1, 300)
+userid_clients = range(1, 301)
 
 def nodot(item):
   """Can be used to ignore hidden files, starting with the . character."""
@@ -29,7 +29,7 @@ def nodot(item):
 
 def add_clients(session, verbose):
   """Add clients to the ATVS Keystroke database."""
-  for cdid in userid_clients:
+  for cid in userid_clients:
     if verbose>1: print("  Adding user '%s'" % (cid))
     session.add(Client(cid))
 

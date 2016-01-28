@@ -49,7 +49,7 @@ setup(
 
       # declare database to bob
       'bob.db': [
-        'atvskeystroke = bob.db.KBOC16.driver:Interface',
+        'KBOC16 = bob.db.KBOC16.driver:Interface',
         ],
 
       },

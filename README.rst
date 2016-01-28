@@ -1,7 +1,7 @@
 .. image:: http://img.shields.io/badge/docs-stable-yellow.png
    :target: http://pythonhosted.org/bob.db.KBOC16/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
-   :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.atvskeystroke/master/index.html
+   :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.KBOC16/master/index.html
 .. image:: https://travis-ci.org/bioidiap/bob.db.KBOC16?branch=master
    :target: https://travis-ci.org/bioidiap/bob.db.KBOC16
 .. image:: https://coveralls.io/repos/bioidiap/bob.db.KBOC16/badge.svg
@@ -18,7 +18,7 @@
  KBOC16 Database
 ==================
 
-This package contains the access API and descriptions for the `ATVS Keystroke
+This package contains the access API and descriptions for the `KBOC16
 Database`_.
 
 You would normally not install this package unless you are maintaining it. What
@@ -60,7 +60,7 @@ script)::
 
     install_requires=[
       ...
-      "bob.db.atvskeystroke",
+      "bob.db.KBOC16",
     ],
 
 Proceed normally with your ``boostrap/buildout`` steps and you should be all

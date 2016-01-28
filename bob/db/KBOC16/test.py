@@ -52,4 +52,4 @@ class KBOC16DatabaseTest(unittest.TestCase):
       assert main('KBOC16 dumplist --self-test'.split()) == 0
       assert main('KBOC16 checkfiles --self-test'.split()) == 0
       assert main('KBOC16 reverse T001_01 --self-test'.split()) == 0
-      assert main('KBOC16 path 37 --self-test'.split()) == 0
+      assert main('KBOC16 path 37 --self-test'.split()) == 0"""

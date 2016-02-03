@@ -115,7 +115,7 @@ def path(args):
 class Interface(BaseInterface):
 
   def name(self):
-    return 'KBOC16'
+    return 'kboc16'
 
   def version(self):
     import pkg_resources  # part of setuptools

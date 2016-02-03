@@ -53,11 +53,6 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
 
     return ProtocolPurpose.group_choices
 
-  def client_types(self):
-    """Returns the names of the types."""
-
-    return Client.type_choices
-
   def client_groups(self):
     """Returns the names of the groups. This is specific to this database which
     does not have separate training, development and evaluation sets."""
@@ -80,12 +75,12 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     Returns: A list containing all the clients which have the given properties.
     """
 
-    groups = self.__group_replace_eval_by_genuine__(groups)
-    groups = self.check_parameters_for_validity(groups, "group", self.client_types())
+    """groups = self.__group_replace_eval_by_genuine__(groups)
+    groups = self.check_parameters_for_validity(groups, "group", self.client_groups())"""
     # List of the clients
     q = self.query(Client)
-    if groups:
-      q = q.filter(Client.stype.in_(groups))
+    """if groups:
+      q = q.filter(Client.sgroup.in_(groups))"""
     q = q.order_by(Client.id)
     return list(q)
 
@@ -106,7 +101,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
              to the given group.
     """
 
-    groups = self.__group_replace_eval_by_genuine__(groups)
+    #groups = self.__group_replace_eval_by_genuine__(groups)
     #groups = self.check_parameters_for_validity(groups, "group", ('Genuine',))
 
     # List of the clients
@@ -202,7 +197,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
         q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
               filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'enrol'))
         if model_ids:
-          q = q.filter(Client.subid.in_(model_ids))
+          q = q.filter(Client.id.in_(model_ids))
         q = q.order_by(File.client_id, File.session_id, File.shot_id)
         retval += list(q)
 
@@ -211,7 +206,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
           q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
                 filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'probe'))
           if model_ids:
-            q = q.filter(Client.subid.in_(model_ids))
+            q = q.filter(Client.id.in_(model_ids))
           q = q.order_by(File.client_id, File.session_id, File.shot_id)
           retval += list(q)
 
@@ -219,7 +214,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
           q = self.query(File).join(Client).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).\
                 filter(and_(Protocol.name.in_(protocol), ProtocolPurpose.sgroup.in_(groups), ProtocolPurpose.purpose == 'probe'))
           if model_ids:
-            q = q.filter(Client.subid.in_(model_ids))
+            q = q.filter(Client.id.in_(model_ids))
           q = q.order_by(File.client_id, File.session_id, File.shot_id)
           retval += list(q)
 

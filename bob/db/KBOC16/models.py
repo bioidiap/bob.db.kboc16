@@ -32,6 +32,7 @@ protocolPurpose_file_association = Table('protocolPurpose_file_association', Bas
 
 db_file_extension = '.txt'
 
+
 class Client(Base):
   """Database clients, marked by an integer identifier and the group they belong to"""
 

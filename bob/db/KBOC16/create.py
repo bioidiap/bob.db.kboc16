@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-"""This script creates the ATVSKeystroke database in a single pass.
+"""This script creates the KBOC16 database in a single pass.
 """
 
 import os,string

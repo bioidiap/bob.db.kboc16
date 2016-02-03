@@ -20,7 +20,7 @@ import os, sys
 import unittest
 from .query import Database
 
-class KBOC16DatabaseTest(unittest.TestCase):
+class kboc16DatabaseTest(unittest.TestCase):
 
     def test_clients(self):
       db = Database()
@@ -49,7 +49,7 @@ class KBOC16DatabaseTest(unittest.TestCase):
     def test_driver_api(self):
 
       from bob.db.base.script.dbmanage import main
-      assert main('KBOC16 dumplist --self-test'.split()) == 0
-      assert main('KBOC16 checkfiles --self-test'.split()) == 0
-      assert main('KBOC16 reverse T001_01 --self-test'.split()) == 0
-      assert main('KBOC16 path 37 --self-test'.split()) == 0
+      assert main('kboc16 dumplist --self-test'.split()) == 0
+      assert main('kboc16 checkfiles --self-test'.split()) == 0
+      assert main('kboc16 reverse T001_01 --self-test'.split()) == 0
+      assert main('kboc16 path 37 --self-test'.split()) == 0

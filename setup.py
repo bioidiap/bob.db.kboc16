@@ -29,10 +29,10 @@ version = open("version.txt").read().rstrip()
 # parameters that define our package.
 setup(
 
-    name='bob.db.KBOC16',
+    name='bob.db.kboc16',
     version=version,
     description='KBOC16 Database Access API for Bob',
-    url='http://github.com/mgbarrero/bob.db.KBOC16',
+    url='http://github.com/mgbarrero/bob.db.kboc16',
     license='GPLv3',
     author='Marta Gomez-Barrero',
     author_email='marta.barrero@uam.es',
@@ -49,7 +49,7 @@ setup(
 
       # declare database to bob
       'bob.db': [
-        'KBOC16 = bob.db.KBOC16.driver:Interface',
+        'kboc16 = bob.db.kboc16.driver:Interface',
         ],
 
       },

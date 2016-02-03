@@ -1,17 +1,17 @@
 .. image:: http://img.shields.io/badge/docs-stable-yellow.png
-   :target: http://pythonhosted.org/bob.db.KBOC16/index.html
+   :target: http://pythonhosted.org/bob.db.kboc16/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
-   :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.KBOC16/master/index.html
-.. image:: https://travis-ci.org/bioidiap/bob.db.KBOC16?branch=master
-   :target: https://travis-ci.org/bioidiap/bob.db.KBOC16
-.. image:: https://coveralls.io/repos/bioidiap/bob.db.KBOC16/badge.svg
-   :target: https://coveralls.io/r/bioidiap/bob.db.KBOC16
+   :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.kboc16/master/index.html
+.. image:: https://travis-ci.org/bioidiap/bob.db.kboc16?branch=master
+   :target: https://travis-ci.org/bioidiap/bob.db.kboc16
+.. image:: https://coveralls.io/repos/bioidiap/bob.db.kboc16/badge.svg
+   :target: https://coveralls.io/r/bioidiap/bob.db.kboc16
 .. image:: https://img.shields.io/badge/github-master-0000c0.png
-   :target: https://github.com/bioidiap/bob.db.KBOC16/tree/master
-.. image:: http://img.shields.io/pypi/v/bob.db.KBOC16.png
-   :target: https://pypi.python.org/pypi/bob.db.KBOC16
-.. image:: http://img.shields.io/pypi/dm/bob.db.KBOC16.png
-   :target: https://pypi.python.org/pypi/bob.db.KBOC16
+   :target: https://github.com/bioidiap/bob.db.kboc16/tree/master
+.. image:: http://img.shields.io/pypi/v/bob.db.kboc16.png
+   :target: https://pypi.python.org/pypi/bob.db.kboc16
+.. image:: http://img.shields.io/pypi/dm/bob.db.kboc16.png
+   :target: https://pypi.python.org/pypi/bob.db.kboc16
 
 
 ==================
@@ -60,11 +60,11 @@ script)::
 
     install_requires=[
       ...
-      "bob.db.KBOC16",
+      "bob.db.kboc16",
     ],
 
 Proceed normally with your ``boostrap/buildout`` steps and you should be all
-set. That means you can now import the ``bob.db.KBOC16`` namespace into your scripts.
+set. That means you can now import the ``bob.db.kboc16 `` namespace into your scripts.
 
 Modify your buildout.cfg and download from git
 ==============================================
@@ -79,8 +79,8 @@ lines::
   extensions =mr.developer
   auto-checkout = *
   eggs = ...
-         bob.db.KBOC16
+         bob.db.kboc16
 
   [sources]
-  bob.db.KBOC16 = git https://github.com/mgbarrero/bob.db.KBOC16.git
+  bob.db.KBOC16 = git https://github.com/mgbarrero/bob.db.kboc16.git
   ...

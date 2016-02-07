@@ -23,8 +23,8 @@ install:
 script:
 - ./bin/bob_dbmanage.py kboc16 download
 - ./bin/coverage run --source=bob.db.kboc16 ./bin/nosetests -sv
-- ./bin/sphinx-build -b doctest docs sphinx
-- ./bin/sphinx-build -b html docs sphinx
+- ./bin/sphinx-build -b doctest doc sphinx
+- ./bin/sphinx-build -b html doc sphinx
 after_success:
 - coveralls
 - wget https://raw.githubusercontent.com/bioidiap/bob.extension/master/scripts/upload-{sphinx,wheel}.sh

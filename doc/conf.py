@@ -76,7 +76,7 @@ copyright = u'%s, ' % time.strftime('%Y')
 # built documents.
 #
 # The short X.Y version.
-from bob.db.KBOC16.driver import Interface
+from bob.db.kboc16.driver import Interface
 version = Interface().version()
 # The full version, including alpha/beta/rc tags.
 release = version

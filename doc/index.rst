@@ -4,4 +4,4 @@
  KBOC16 Database
 ==================
 
-.. automodule:: bob.db.KBOC16
+.. automodule:: bob.db.kboc16

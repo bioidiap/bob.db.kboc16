@@ -147,6 +147,6 @@ def add_command(subparsers):
 
   parser.add_argument('-R', '--recreate', action='store_true', help="If set, I'll first erase the current database")
   parser.add_argument('-v', '--verbose', action='count', help="Do SQL operations in a verbose way?")
-  parser.add_argument('-D', '--imagedir', metavar='DIR', default='/home/bob/KBOC16data', help="Change the relative path to the directory containing the images of the KBOC16 database.")
+  parser.add_argument('-D', '--imagedir', metavar='DIR', default='/idiap/group/biometric/databases/kboc16', help="Change the relative path to the directory containing the images of the KBOC16 database.")
 
   parser.set_defaults(func=create) #action

@@ -27,6 +27,10 @@ class kboc16DatabaseTest(unittest.TestCase):
       assert len(db.groups()) == 1
       assert len(db.clients()) == 300
       assert len(db.clients(groups='eval')) ==300
+      assert len(db.clients(protocol = 'A', groups='eval')) == 300
+      assert len(db.clients(protocol = 'A')) == 300
+      assert len(db.clients(protocol = 'D', groups='eval')) == 100
+      assert len(db.clients(protocol = 'D')) == 100
       assert len(db.models()) == 300
       assert len(db.models(groups='eval')) == 300
       assert len(db.models(protocol = 'A', groups='eval')) == 300

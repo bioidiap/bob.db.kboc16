@@ -59,7 +59,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
 
     return ProtocolPurpose.group_choices
 
-  def clients(self, protocol=None, groups=None):
+  def clients(self, protocol=None, groups='eval'):
     """Returns a list of :py:class:`.Client` for the specific query by the user.
 
     Keyword Parameters:
@@ -78,7 +78,11 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     """groups = self.__group_replace_eval_by_genuine__(groups)
     groups = self.check_parameters_for_validity(groups, "group", self.client_groups())"""
     # List of the clients
-    q = self.query(Client)
+    #q = self.query(Client)
+    if (protocol):
+      q = self.query(Client).join(File).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).filter(and_(Protocol.name.in_((protocol,)), ProtocolPurpose.sgroup.in_((groups,))))
+    else:
+      q = self.query(Client)
     """if groups:
       q = q.filter(Client.sgroup.in_(groups))"""
     q = q.order_by(Client.id)

@@ -44,6 +44,17 @@ class kboc16DatabaseTest(unittest.TestCase):
       assert len(db.objects(protocol='A', groups='eval', purposes='probe', model_ids=[1], classes='client')) == 20
       assert len(db.objects(protocol='A', groups='eval', purposes='probe', model_ids=[1,2])) == 40
       assert len(db.objects(protocol='A', groups='eval', purposes='probe', model_ids=[1,2], classes='client')) == 40
+      
+      # D
+      assert len(db.objects(protocol='D')) == 2400
+      assert len(db.objects(protocol='D', groups='eval')) == 2400
+      assert len(db.objects(protocol='D', groups='eval', purposes='enrol')) == 400
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe')) == 2000
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe', classes='client')) == 2000
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe', model_ids=[1])) == 20
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe', model_ids=[1], classes='client')) == 20
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe', model_ids=[1,2])) == 40
+      assert len(db.objects(protocol='D', groups='eval', purposes='probe', model_ids=[1,2], classes='client')) == 40
 
 
     def test_driver_api(self):

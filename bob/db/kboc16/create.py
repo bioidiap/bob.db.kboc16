@@ -63,7 +63,8 @@ def add_protocols(session, verbose):
   # 1. DEFINITIONS
   enroll_session = [1]
   client_probe_session = [2]
-  protocols = ['A']
+  protocols = ['A','D']
+  client_ids_protD = range(1,101)
 
   # 2. ADDITIONS TO THE SQL DATABASE
   protocolPurpose_list = [('eval', 'enrol'), ('eval', 'probe')]
@@ -87,13 +88,19 @@ def add_protocols(session, verbose):
 
       # Add files attached with this protocol purpose
       if(key == 0): #test enrol
-        q = session.query(File).join(Client).filter(File.session_id.in_(enroll_session))
+        if proto == 'D':
+          q = session.query(File).join(Client).filter(Client.id.in_(client_ids_protD)).filter(File.session_id.in_(enroll_session))
+        else:
+          q = session.query(File).join(Client).filter(File.session_id.in_(enroll_session))
         for k in q:
           if verbose>1: print("    Adding protocol file '%s'..." % (k.path))
           pu.files.append(k)
 
       elif(key == 1): #test probe
-        q = session.query(File).join(Client).filter(File.session_id.in_(client_probe_session))
+        if (proto == 'D'):
+          q = session.query(File).join(Client).filter(Client.id.in_(client_ids_protD)).filter(File.session_id.in_(client_probe_session))
+        else:
+          q = session.query(File).join(Client).filter(File.session_id.in_(client_probe_session))
         for k in q:
           if verbose>1: print("    Adding protocol file '%s'..." % (k.path))
           pu.files.append(k)

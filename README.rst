@@ -2,10 +2,10 @@
    :target: http://pythonhosted.org/bob.db.kboc16/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
    :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.kboc16/master/index.html
-.. image:: https://travis-ci.org/bioidiap/bob.db.kboc16.svg?branch=v2.0.2
-   :target: https://travis-ci.org/bioidiap/bob.db.kboc16?branch=v2.0.2
-.. image:: https://coveralls.io/repos/bioidiap/bob.db.kboc16/badge.svg?branch=v2.0.2
-   :target: https://coveralls.io/r/bioidiap/bob.db.kboc16?branch=v2.0.2
+.. image:: https://travis-ci.org/bioidiap/bob.db.kboc16.svg?branch=master
+   :target: https://travis-ci.org/bioidiap/bob.db.kboc16?branch=master
+.. image:: https://coveralls.io/repos/bioidiap/bob.db.kboc16/badge.svg?branch=master
+   :target: https://coveralls.io/r/bioidiap/bob.db.kboc16?branch=master
 .. image:: https://img.shields.io/badge/github-master-0000c0.png
    :target: https://github.com/bioidiap/bob.db.kboc16/tree/master
 .. image:: http://img.shields.io/pypi/v/bob.db.kboc16.png

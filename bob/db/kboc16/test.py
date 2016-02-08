@@ -29,6 +29,14 @@ class kboc16DatabaseTest(unittest.TestCase):
       assert len(db.clients(groups='eval')) ==300
       assert len(db.models()) == 300
       assert len(db.models(groups='eval')) == 300
+      assert len(db.models(protocol = 'A', groups='eval')) == 300
+      assert len(db.models(protocol = 'A')) == 300
+      assert len(db.models(protocol = 'D', groups='eval')) == 100
+      assert len(db.models(protocol = 'D')) == 100
+      assert not u'101' in [x.id for x in db.models(protocol = 'D', groups='eval')]
+      assert u'1' in [x.id for x in db.models(protocol = 'D', groups='eval')]
+      assert u'100' in [x.id for x in db.models(protocol = 'D', groups='eval')]
+
 
 
     def test_objects(self):

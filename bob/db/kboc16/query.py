@@ -84,14 +84,14 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     q = q.order_by(Client.id)
     return list(q)
 
-  def models(self, protocol=None, groups=None):
+  def models(self, protocol=None, groups='eval'):
     """Returns a list of :py:class:`.Client` for the specific query by the user.
        Models correspond to Clients for this database (At most one model per identity).
 
     Keyword Parameters:
 
     protocol
-      Ignored.
+      'A' or 'D'.
 
     groups
       The groups to which the subjects attached to the models belong ('Genuine')
@@ -105,7 +105,11 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
     #groups = self.check_parameters_for_validity(groups, "group", ('Genuine',))
 
     # List of the clients
-    q = self.query(Client)
+    #q = self.query(Client)
+    if (protocol):
+      q = self.query(Client).join(File).join((ProtocolPurpose, File.protocolPurposes)).join(Protocol).filter(and_(Protocol.name.in_((protocol,)), ProtocolPurpose.sgroup.in_((groups,))))
+    else:
+      q = self.query(Client)
     """if groups:
       q = q.filter(Client.stype.in_(groups))
     else:

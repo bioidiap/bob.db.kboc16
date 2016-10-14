@@ -1,32 +1,19 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, version 3 of the License.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 """This module provides the Dataset interface allowing the user to query the
 KBOC16 database in the most obvious ways.
 """
 
-import os
 import six
 from .models import *
 from .driver import Interface
 
-import bob.db.verification.utils
+import bob.db.base
 
 SQLITE_FILE = Interface().files()[0]
 
-class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.utils.Database):
+class Database(bob.db.base.SQLiteDatabase):
   """The dataset class opens and maintains a connection opened to the Database.
 
   It provides many different ways to probe for the characteristics of the data
@@ -35,8 +22,9 @@ class Database(bob.db.verification.utils.SQLiteDatabase,bob.db.verification.util
 
   def __init__(self, original_directory = None, original_extension = db_file_extension):
     # call base class constructor
-    bob.db.verification.utils.SQLiteDatabase.__init__(self, SQLITE_FILE, File)
-    bob.db.verification.utils.Database.__init__(self, original_directory=original_directory, original_extension=original_extension)
+    super(Database, self).__init__(SQLITE_FILE, File)
+    self.original_directory = original_directory
+    self.original_extension = original_extension
 
   def __group_replace_eval_by_genuine__(self, l):
     """Replace 'eval' by 'Genuine' and returns the new list"""

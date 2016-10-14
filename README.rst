@@ -5,8 +5,8 @@
    :target: http://pythonhosted.org/bob.db.kboc16/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.kboc16/master/index.html
-.. image:: https://gitlab.idiap.ch/bob/bob.db.kboc16/badges/master/build.svg
-   :target: https://gitlab.idiap.ch/bob/bob.db.kboc16/commits/master
+.. image:: https://gitlab.idiap.ch/bob/bob.db.kboc16/badges/v2.0.5/build.svg
+   :target: https://gitlab.idiap.ch/bob/bob.db.kboc16/commits/v2.0.5
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.kboc16
 .. image:: http://img.shields.io/pypi/v/bob.db.kboc16.png

@@ -1,17 +1,17 @@
 .. vim: set fileencoding=utf-8 :
 .. Thu Aug 18 20:54:15 CEST 2016
 
-.. image:: http://img.shields.io/badge/docs-stable-yellow.png
+.. image:: http://img.shields.io/badge/docs-stable-yellow.svg
    :target: http://pythonhosted.org/bob.db.kboc16/index.html
-.. image:: http://img.shields.io/badge/docs-latest-orange.png
+.. image:: http://img.shields.io/badge/docs-latest-orange.svg
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.kboc16/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.kboc16/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.kboc16/commits/master
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.kboc16
-.. image:: http://img.shields.io/pypi/v/bob.db.kboc16.png
+.. image:: http://img.shields.io/pypi/v/bob.db.kboc16.svg
    :target: https://pypi.python.org/pypi/bob.db.kboc16
-.. image:: http://img.shields.io/pypi/dm/bob.db.kboc16.png
+.. image:: http://img.shields.io/pypi/dm/bob.db.kboc16.svg
    :target: https://pypi.python.org/pypi/bob.db.kboc16
 
 
@@ -42,6 +42,6 @@ development `mailing list`_.
 
 .. Place your references here:
 .. _bob: https://www.idiap.ch/software/bob
-.. _installation: https://gitlab.idiap.ch/bob/bob/wikis/Installation
+.. _installation: https://www.idiap.ch/software/bob/install
 .. _mailing list: https://groups.google.com/forum/?fromgroups#!forum/bob-devel
 .. _kboc16 database: http://atvs.ii.uam.es/databases.jsp

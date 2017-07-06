@@ -2,9 +2,9 @@
 .. Thu Aug 18 20:54:15 CEST 2016
 
 .. image:: http://img.shields.io/badge/docs-stable-yellow.svg
-   :target: http://pythonhosted.org/bob.db.kboc16/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.kboc16/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.svg
-   :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.db.kboc16/master/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.kboc16/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.kboc16/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.kboc16/commits/master
 .. image:: https://gitlab.idiap.ch/bob/bob.db.kboc16/badges/master/coverage.svg
@@ -12,8 +12,6 @@
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.kboc16
 .. image:: http://img.shields.io/pypi/v/bob.db.kboc16.svg
-   :target: https://pypi.python.org/pypi/bob.db.kboc16
-.. image:: http://img.shields.io/pypi/dm/bob.db.kboc16.svg
    :target: https://pypi.python.org/pypi/bob.db.kboc16
 
 
@@ -28,7 +26,7 @@ Bob_. It contains the access API and descriptions for the `KBOC16 Database`_.
 Installation
 ------------
 
-Complete Bob's `installation`_ instructions. Then, to install this pacakge,
+Complete Bob's `installation`_ instructions. Then, to install this package,
 run::
 
   $ conda install bob.db.kboc16

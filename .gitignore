@@ -13,3 +13,4 @@ sphinx
 dist
 *.sql3
 build/
+record.txt
